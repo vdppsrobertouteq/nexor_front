@@ -1,0 +1,552 @@
+/* Contenedor principal */
+.admin-portfolios-container {
+    padding: 24px;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header de portafolios */
+.portfolios-header {
+    text-align: center;
+    margin-bottom: 40px;
+    animation: slideDown 0.8s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.portfolios-title {
+    background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    font-size: 3.5rem !important;
+    margin-bottom: 0 !important;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Controles de búsqueda y creación */
+.portfolios-controls {
+    margin-bottom: 32px;
+    animation: slideUp 0.8s ease-out 0.2s both;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.search-input {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.search-input:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.search-input:focus {
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+}
+
+.create-button {
+    border-radius: 12px;
+    background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    font-weight: 600;
+    height: 48px;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    transition: all 0.3s ease;
+}
+
+.create-button:hover {
+    background: linear-gradient(45deg, #5a6fd8 0%, #6a4190 100%);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Grid de portafolios */
+.portfolios-grid {
+    animation: slideUp 0.8s ease-out 0.4s both;
+}
+
+/* Cards de portafolio */
+.portfolio-card {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: white;
+    border: none;
+    animation: cardAppear 0.6s ease-out;
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.portfolio-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio-card .ant-card-head {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-bottom: none;
+    padding: 20px 24px;
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portfolio-name {
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.card-content {
+    padding: 4px 0;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.portfolio-description {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    font-size: 0.95rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.portfolio-date {
+    color: #999;
+    font-size: 0.85rem;
+    padding-top: 12px;
+    border-top: 1px solid #f0f0f0;
+}
+
+/* Botones de acción */
+.portfolio-card .ant-card-actions {
+    background: #fafafa;
+    border-top: 1px solid #f0f0f0;
+}
+
+.portfolio-card .ant-card-actions>li {
+    margin: 8px 0;
+}
+
+.action-button {
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.edit-button:hover {
+    background: linear-gradient(45deg, #52c41a, #389e0d);
+    color: white;
+    transform: scale(1.05);
+}
+
+.open-button:hover {
+    background: linear-gradient(45deg, #1890ff, #096dd9);
+    color: white;
+    transform: scale(1.05);
+}
+
+.delete-button:hover {
+    background: linear-gradient(45deg, #ff4d4f, #cf1322);
+    color: white;
+    transform: scale(1.05);
+}
+
+.portfolio-card .ant-card-actions>li {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.action-button {
+    width: 100%;
+    max-width: 100px;
+    /* Ajusta según tu diseño */
+    justify-content: center;
+}
+
+
+/* Estado vacío */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.empty-state .ant-empty {
+    margin: 0;
+}
+
+.empty-state .ant-empty-description {
+    color: #999;
+    font-size: 1.1rem;
+}
+
+/* Modal de portafolio */
+.portfolio-modal .ant-modal-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-bottom: none;
+    border-radius: 8px 8px 0 0;
+}
+
+.portfolio-modal .ant-modal-title {
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-align: center; /* 👈 Agregado */
+    width: 100%;        /* 👈 Asegura que el centrado funcione */
+}
+
+.portfolio-modal .ant-modal-close {
+    color: white;
+}
+
+.portfolio-modal .ant-modal-close:hover {
+    color: #f0f0f0;
+}
+
+.portfolio-modal .ant-modal-body {
+    padding: 32px 24px;
+}
+
+.portfolio-form {
+    margin-top: 10px;
+}
+
+.portfolio-form .ant-form-item-label>label {
+    font-weight: 600;
+    color: #333;
+}
+
+.portfolio-form .ant-input,
+.portfolio-form .ant-input:focus {
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.portfolio-form .ant-input:hover {
+    border-color: #667eea;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
+}
+
+.portfolio-form .ant-input:focus {
+    border-color: #667eea;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+.form-actions {
+    text-align: right;
+    margin-top: 32px;
+    margin-bottom: 0;
+}
+
+.form-actions .ant-btn {
+    border-radius: 8px;
+    font-weight: 500;
+    height: 44px;
+    padding: 0 24px;
+}
+
+.form-actions .ant-btn-primary {
+    background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.form-actions .ant-btn-primary:hover {
+    background: linear-gradient(45deg, #5a6fd8 0%, #6a4190 100%);
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+    transform: translateY(-1px);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .admin-portfolios-container {
+        padding: 16px;
+    }
+
+    .portfolios-title {
+        font-size: 2.5rem !important;
+    }
+
+    .portfolios-controls {
+        margin-bottom: 24px;
+    }
+
+    .portfolio-card {
+        margin-bottom: 16px;
+    }
+
+    .card-content {
+        min-height: 100px;
+    }
+
+    .portfolio-modal {
+        margin: 16px;
+        max-width: calc(100vw - 32px);
+    }
+}
+
+@media (max-width: 576px) {
+    .portfolios-title {
+        font-size: 2rem !important;
+    }
+
+    .action-button {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+
+    .action-button > span:last-child {
+    display: none;
+  }
+
+    .portfolio-card .ant-card-actions>li {
+        margin: 4px 0;
+    }
+}
+
+/* Animaciones adicionales */
+.portfolio-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.portfolio-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.portfolio-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.portfolio-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.portfolio-card:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.portfolio-card:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+.portfolio-name {
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    max-width: 100%;
+}
+
+.portfolio-name.marquee {
+    animation: scroll-left-right 10s linear infinite;
+}
+
+@keyframes scroll-left-right {
+    0% {
+        transform: translateX(0%);
+    }
+    40% {
+        transform: translateX(-50%);
+    }
+    60% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+
+/* Efectos de hover mejorados */
+.search-input .ant-input-prefix {
+    transition: color 0.3s ease;
+}
+
+.search-input:hover .ant-input-prefix {
+    color: #667eea;
+}
+
+/* Loading states */
+.ant-spin-container {
+    transition: all 0.3s ease;
+}
+
+.ant-spin-blur {
+    opacity: 0.7;
+    filter: blur(1px);
+}
+
+/* Mejoras de accesibilidad */
+.action-button:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+.create-button:focus {
+    outline: 2px solid #764ba2;
+    outline-offset: 2px;
+}
+
+.search-input:focus-within {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+/* Fragmentos CSS adicionales para AdminProgramsContent.jsx */
+
+/* Breadcrumb para mostrar el portafolio actual */
+.portfolio-breadcrumb {
+  text-align: center;
+  margin-top: 8px;
+  padding: 8px 16px;
+  background-color: #f5f5f5;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+.portfolio-breadcrumb .ant-typography {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Mejoras para la visualización de información adicional en las cards */
+.card-content .portfolio-admin:last-child {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #f0f0f0;
+  color: #666;
+  font-size: 13px;
+}
+
+/* Responsive para el breadcrumb */
+@media (max-width: 768px) {
+  .portfolio-breadcrumb {
+    margin: 12px 0;
+    padding: 12px;
+  }
+  
+  .portfolio-breadcrumb .ant-typography {
+    font-size: 13px;
+  }
+}
+
+
+/* Estilos específicos para proyectos */
+.project-status {
+    margin: 12px 0;
+    display: flex;
+    gap: 8px;
+}
+
+.project-status .ant-tag {
+    padding: 4px 8px;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.project-members {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.project-members .ant-avatar-group {
+    cursor: pointer;
+}
+
+/* Estilos para el Transfer de usuarios */
+.ant-transfer-list {
+    border-radius: 8px;
+    border: 1px solid #d9d9d9;
+}
+
+.ant-transfer-list-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 8px 8px 0 0;
+}
+
+.ant-transfer-list-header-title {
+    color: white;
+}
+
+.ant-transfer-list-content-item:hover {
+    background-color: #f0f5ff;
+}
+
+.ant-transfer-list-content-item-checked {
+    background-color: #e6f7ff;
+}

@@ -1,0 +1,48 @@
+/* File: frontend/src/layouts/Layout.css */
+
+.app-layout { /* Ahora es app-layout */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content-area { /* Ahora es main-content-area */
+  flex: 1;
+  position: relative;
+  display: flex; /* Añadido para controlar el layout del sidebar y el contenido */
+  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+}
+
+.page-content { /* Ahora es page-content */
+  margin-left: 0; /* Esto se controlará dinámicamente por el sidebar */
+  transition: margin-left 0.2s ease;
+  min-height: calc(100vh - 64px); /* Resta la altura del navbar */
+  background-color: #f5f5f5;
+  padding-top: 64px; /* Espacio para el navbar */
+  flex-grow: 1; /* Permite que el contenido ocupe el espacio restante */
+}
+
+/* El content-wrapper se mantiene porque es una clase interna que encapsula el children */
+.content-wrapper {
+  padding: 0;
+  background: transparent;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .content-wrapper {
+    margin: 12px;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .content-wrapper {
+    margin: 8px;
+    padding: 12px;
+  }
+}

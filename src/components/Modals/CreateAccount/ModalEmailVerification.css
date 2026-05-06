@@ -1,0 +1,196 @@
+/* ---------- CONTENEDOR DEL MODAL ---------- */
+.email-verification-modal .ant-modal-content {
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--background-color) 0%, #f8fafc 100%);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.email-verification-modal .ant-modal-header {
+  background: #17211F;
+background: linear-gradient(90deg,rgba(23, 33, 31, 1) 0%, rgba(52, 74, 70, 1) 90%);
+  border: none;
+  padding: 24px 32px;
+  color: white;
+}
+
+.email-verification-modal .ant-modal-title {
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.email-verification-modal .ant-modal-close {
+  color: white;
+  font-size: 18px;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.email-verification-modal .ant-modal-close:hover {
+  opacity: 1;
+}
+
+.email-verification-modal .ant-modal-body {
+  padding: 32px;
+}
+
+/* ---------- STEPS ---------- */
+.steps-container {
+  margin-bottom: 32px;
+}
+
+.email-verification-modal .ant-steps-item-process .ant-steps-item-icon {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.email-verification-modal .ant-steps-item-process .ant-steps-item-icon>.ant-steps-icon {
+  color: white;
+}
+
+/* ---------- CONTENIDO ---------- */
+.step-content,
+.success-content {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.step-header {
+  margin-bottom: 32px;
+}
+
+.step-icon,
+.success-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  color: white;
+  font-size: 32px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.success-icon {
+  background: var(--success-color);
+}
+
+.step-header h3,
+.success-content h3 {
+  color: var(--text-color);
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.step-header p,
+.success-content p {
+  color: var(--text-secondary-color);
+  font-size: 16px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.step-form {
+  margin-top: 24px;
+}
+
+.form-item {
+  margin-bottom: 24px;
+}
+
+.form-label {
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.form-error {
+  color: var(--error-color);
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* ---------- INPUT ---------- */
+.email-verification-modal .ant-input-lg {
+  border-radius: 12px;
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+.email-verification-modal .ant-input-lg:focus,
+.email-verification-modal .ant-input-lg:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.email-verification-modal .ant-input-status-success {
+  border-color: var(--success-color);
+}
+
+.email-verification-modal .ant-input-status-error {
+  border-color: var(--error-color);
+}
+
+/* ---------- BOTONES y LINK ---------- */
+.step-button {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  height: 48px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.step-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+.step-button:disabled {
+  background: #9ca3af;
+  box-shadow: none;
+  transform: none;
+}
+
+/* enlace reenviar código */
+.resend-link {
+  display: block;
+  margin-top: 12px;
+  font-weight: 500;
+  padding: 0;
+}
+
+.resend-link[disabled] {
+  opacity: 0.6;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .email-verification-modal .ant-modal-body {
+    padding: 24px 16px;
+  }
+
+  .step-header h3,
+  .success-content h3 {
+    font-size: 24px;
+  }
+
+  .step-icon,
+  .success-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+}

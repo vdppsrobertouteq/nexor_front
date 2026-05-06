@@ -1,0 +1,226 @@
+/* File: frontend/src/components/Messages/Messages.css */
+
+/* Estilos personalizados para SweetAlert2 */
+
+/* Contenedor principal del modal */
+.custom-swal-popup {
+  border-radius: 12px !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15) !important;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  max-width: 500px !important;
+  padding: 30px !important;
+}
+
+/* Título del modal */
+.custom-swal-title {
+  font-size: 24px !important;
+  font-weight: 600 !important;
+  margin-bottom: 15px !important;
+  color: #333 !important;
+}
+
+/* Contenido del modal */
+.custom-swal-content {
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+  color: #666 !important;
+  margin-bottom: 20px !important;
+}
+
+/* Botón de confirmación */
+.custom-swal-confirm-btn {
+  background-color: #1890ff !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 12px 30px !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 12px rgba(24, 144, 255, 0.3) !important;
+}
+
+.custom-swal-confirm-btn:hover {
+  background-color: #0c7cd5 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(24, 144, 255, 0.4) !important;
+}
+
+/* Botón de cancelación */
+.custom-swal-cancel-btn {
+  background-color: #f5f5f5 !important;
+  color: #666 !important;
+  border: 1px solid #d9d9d9 !important;
+  border-radius: 8px !important;
+  padding: 12px 30px !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+  margin-right: 10px !important;
+}
+
+.custom-swal-cancel-btn:hover {
+  background-color: #e6e6e6 !important;
+  border-color: #bfbfbf !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Iconos personalizados */
+.swal2-icon {
+  margin: 20px auto 30px auto !important;
+  width: 80px !important;
+  height: 80px !important;
+}
+
+/* Icono de éxito */
+.swal2-icon.swal2-success {
+  color: #52c41a !important;
+  border-color: #52c41a !important;
+}
+
+.swal2-icon.swal2-success .swal2-success-ring {
+  border-color: #52c41a !important;
+}
+
+.swal2-icon.swal2-success .swal2-success-fix {
+  background-color: #52c41a !important;
+}
+
+/* Icono de error */
+.swal2-icon.swal2-error {
+  color: #ff4d4f !important;
+  border-color: #ff4d4f !important;
+}
+
+.swal2-icon.swal2-error .swal2-x-mark-line-left,
+.swal2-icon.swal2-error .swal2-x-mark-line-right {
+  background-color: #ff4d4f !important;
+}
+
+/* Icono de advertencia */
+.swal2-icon.swal2-warning {
+  color: #faad14 !important;
+  border-color: #faad14 !important;
+}
+
+.swal2-icon.swal2-warning .swal2-icon-content {
+  color: #faad14 !important;
+}
+
+/* Icono de información */
+.swal2-icon.swal2-info {
+  color: #1890ff !important;
+  border-color: #1890ff !important;
+}
+
+.swal2-icon.swal2-info .swal2-icon-content {
+  color: #1890ff !important;
+}
+
+/* Icono de pregunta */
+.swal2-icon.swal2-question {
+  color: #722ed1 !important;
+  border-color: #722ed1 !important;
+}
+
+.swal2-icon.swal2-question .swal2-icon-content {
+  color: #722ed1 !important;
+}
+
+/* Barra de progreso del timer */
+.swal2-timer-progress-bar {
+  background-color: #1890ff !important;
+  height: 4px !important;
+}
+
+/* Overlay del modal */
+.swal2-container {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(5px) !important;
+}
+
+/* Animaciones personalizadas */
+.swal2-show {
+  animation: swal2-custom-show 0.3s ease-out !important;
+}
+
+.swal2-hide {
+  animation: swal2-custom-hide 0.2s ease-in !important;
+}
+
+@keyframes swal2-custom-show {
+  0% {
+    transform: scale(0.7) translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes swal2-custom-hide {
+  0% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.7) translateY(-50px);
+    opacity: 0;
+  }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .custom-swal-popup {
+    max-width: 90% !important;
+    padding: 20px !important;
+    margin: 0 !important;
+  }
+  
+  .custom-swal-title {
+    font-size: 20px !important;
+  }
+  
+  .custom-swal-content {
+    font-size: 14px !important;
+  }
+  
+  .custom-swal-confirm-btn,
+  .custom-swal-cancel-btn {
+    padding: 10px 20px !important;
+    font-size: 14px !important;
+  }
+  
+  .swal2-icon {
+    width: 60px !important;
+    height: 60px !important;
+    margin: 15px auto 20px auto !important;
+  }
+}
+
+/* Estilos para modo oscuro (opcional) */
+@media (prefers-color-scheme: dark) {
+  .custom-swal-popup {
+    background-color: #1f1f1f !important;
+    color: #ffffff !important;
+  }
+  
+  .custom-swal-title {
+    color: #ffffff !important;
+  }
+  
+  .custom-swal-content {
+    color: #cccccc !important;
+  }
+  
+  .custom-swal-cancel-btn {
+    background-color: #333333 !important;
+    color: #ffffff !important;
+    border-color: #555555 !important;
+  }
+  
+  .custom-swal-cancel-btn:hover {
+    background-color: #444444 !important;
+    border-color: #666666 !important;
+  }
+}

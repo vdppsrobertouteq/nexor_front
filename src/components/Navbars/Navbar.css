@@ -1,0 +1,306 @@
+/* File: frontend/src/components/Navbars/Navbar.css */
+.custom-navbar {
+  background-color: #17211F !important;
+  border-bottom: 1px solid rgba(163, 134, 118, 0.2);
+  padding: 0 16px;
+  height: 64px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Left Section */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+}
+
+.menu-toggle-btn {
+  color: #A38676 !important;
+  border: none !important;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-toggle-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(163, 134, 118, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.menu-toggle-btn:hover::before {
+  left: 100%;
+}
+
+.menu-toggle-btn:hover {
+  background-color: rgba(163, 134, 118, 0.1) !important;
+  transform: scale(1.05);
+}
+
+.menu-toggle-btn:focus {
+  background-color: rgba(163, 134, 118, 0.15) !important;
+}
+
+/* Logo Section */
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 8px;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #A38676, #8B6F63);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(163, 134, 118, 0.3);
+  animation: logoGlow 2s ease-in-out infinite alternate;
+}
+
+.logo-inner {
+  width: 16px;
+  height: 16px;
+  background: #17211F;
+  border-radius: 4px;
+  position: relative;
+}
+
+.logo-inner::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  background: #A38676;
+  border-radius: 50%;
+}
+
+.logo-img {
+  height: 32px;
+  width: auto;
+  margin-right: 8px;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+@keyframes logoGlow {
+  0% {
+    box-shadow: 0 4px 12px rgba(163, 134, 118, 0.3);
+  }
+  100% {
+    box-shadow: 0 4px 20px rgba(163, 134, 118, 0.5);
+  }
+}
+
+.brand-name {
+  color: #A38676 !important;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+/* User Info */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 20px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: rgba(163, 134, 118, 0.1);
+  transition: all 0.3s ease;
+}
+
+.user-info:hover {
+  background: rgba(163, 134, 118, 0.15);
+  transform: translateY(-1px);
+}
+
+.user-avatar {
+  border: 2px solid #A38676;
+  transition: all 0.3s ease;
+}
+
+.user-avatar:hover {
+  transform: scale(1.1);
+}
+
+.user-name {
+  color: #A38676 !important;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Right Section */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar-action-btn {
+  color: #A38676 !important;
+  border: none !important;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar-action-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(163, 134, 118, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.navbar-action-btn:hover::before {
+  left: 100%;
+}
+
+.navbar-action-btn:hover {
+  background-color: rgba(163, 134, 118, 0.1) !important;
+  transform: translateY(-2px);
+}
+
+.navbar-action-btn:focus {
+  background-color: rgba(163, 134, 118, 0.15) !important;
+}
+
+.logout-btn:hover {
+  background-color: rgba(220, 38, 38, 0.1) !important;
+  color: #dc2626 !important;
+}
+
+/* Badge Customization */
+.ant-badge-count {
+  background-color: #A38676 !important;
+  color: #17211F !important;
+  font-size: 10px;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  border: 1px solid #17211F;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .custom-navbar {
+    padding: 0 12px;
+  }
+  
+  .navbar-left {
+    gap: 12px;
+  }
+  
+  .user-info {
+    margin-left: 12px;
+  }
+  
+  .user-name {
+    display: none;
+  }
+  
+  .brand-name {
+    font-size: 16px;
+  }
+  
+  .logo-section {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-navbar {
+    padding: 0 8px;
+  }
+  
+  .navbar-left {
+    gap: 8px;
+  }
+  
+  .user-info {
+    margin-left: 8px;
+    padding: 4px 8px;
+  }
+  
+  .brand-name {
+    display: none;
+  }
+  
+  .navbar-right {
+    gap: 4px;
+  }
+  
+  .navbar-action-btn {
+    padding: 6px;
+  }
+}
+
+@media (max-width: 360px) {
+  .logo-section {
+    display: none;
+  }
+  
+  .user-info {
+    margin-left: 0;
+  }
+}

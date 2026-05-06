@@ -1,0 +1,454 @@
+/* DashboardMetricsContent.css */
+
+.dashboard-container {
+  padding: 24px;
+  background: #f5f5f5;
+  min-height: 100vh;
+}
+
+/* Header Section */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding: 16px 0;
+}
+
+.dashboard-header h2 {
+  margin: 0;
+  color: #1890ff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dashboard-filters {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Sections */
+.summary-section {
+  margin-bottom: 24px;
+}
+
+.charts-section {
+  margin-bottom: 24px;
+}
+
+.tables-section {
+  margin-bottom: 24px;
+}
+
+/* Card Styles */
+.metric-card {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.chart-card {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+}
+
+.chart-card .ant-card-head {
+  background: linear-gradient(135deg, #1890ff 0%, #40a9ff 100%);
+  border-radius: 8px 8px 0 0;
+}
+
+.chart-card .ant-card-head-title {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.chart-card .ant-card-body {
+  padding: 20px;
+}
+
+.table-card {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+}
+
+.table-card .ant-card-head {
+  background: linear-gradient(135deg, #52c41a 0%, #73d13d 100%);
+  border-radius: 8px 8px 0 0;
+}
+
+.table-card .ant-card-head-title {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.info-card {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+}
+
+.info-card .ant-card-head {
+  background: linear-gradient(135deg, #faad14 0%, #ffc53d 100%);
+  border-radius: 8px 8px 0 0;
+}
+
+.info-card .ant-card-head-title {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Specific Component Styles */
+.pending-docs {
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.docs-summary {
+  text-align: center;
+  padding: 8px 0;
+}
+
+.meetings-summary {
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+/* Table Customizations */
+.ant-table {
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.ant-table-thead > tr > th {
+  background: #fafafa;
+  font-weight: 600;
+  border-bottom: 2px solid #e8e8e8;
+}
+
+.ant-table-tbody > tr:hover > td {
+  background: #f0f9ff;
+}
+
+/* Badge Customizations */
+.ant-badge {
+  font-weight: 600;
+}
+
+/* List Customizations */
+.ant-list-item {
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.ant-list-item:last-child {
+  border-bottom: none;
+}
+
+.ant-list-item-meta-title {
+  margin-bottom: 4px;
+}
+
+.ant-list-item-meta-description {
+  color: #8c8c8c;
+}
+
+/* Tag Customizations */
+.ant-tag {
+  border-radius: 4px;
+  font-size: 11px;
+  padding: 0 6px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .dashboard-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  
+  .dashboard-filters {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 16px;
+  }
+  
+  .dashboard-header h2 {
+    font-size: 20px;
+  }
+  
+  .dashboard-filters {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .dashboard-filters .ant-select,
+  .dashboard-filters .ant-picker {
+    width: 120px !important;
+  }
+  
+  .chart-card .ant-card-body {
+    padding: 12px;
+  }
+  
+  .metric-card .ant-card-body {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .dashboard-container {
+    padding: 12px;
+  }
+  
+  .dashboard-filters {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+  
+  .dashboard-filters .ant-select,
+  .dashboard-filters .ant-picker,
+  .dashboard-filters .ant-btn {
+    width: 100% !important;
+  }
+  
+  .summary-section .ant-col {
+    margin-bottom: 12px;
+  }
+  
+  .charts-section .ant-col,
+  .tables-section .ant-col {
+    margin-bottom: 16px;
+  }
+}
+
+/* Animation and Transitions */
+.dashboard-container * {
+  transition: all 0.3s ease;
+}
+
+.ant-spin-nested-loading > div > .ant-spin {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(2px);
+}
+
+.ant-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Loading States */
+.ant-spin-container {
+  position: relative;
+}
+
+.ant-spin-blur {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Chart Responsive Adjustments */
+.recharts-responsive-container {
+  background: transparent;
+}
+
+.recharts-legend-wrapper {
+  padding-top: 10px;
+}
+
+.recharts-default-tooltip {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid #d9d9d9 !important;
+  border-radius: 6px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Custom Scrollbar */
+.pending-docs::-webkit-scrollbar,
+.meetings-summary::-webkit-scrollbar {
+  width: 4px;
+}
+
+.pending-docs::-webkit-scrollbar-track,
+.meetings-summary::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.pending-docs::-webkit-scrollbar-thumb,
+.meetings-summary::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.pending-docs::-webkit-scrollbar-thumb:hover,
+.meetings-summary::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Gradient Backgrounds for Different Card Types */
+.metric-card:nth-child(1) .ant-card-body {
+  background: linear-gradient(135deg, #e6f7ff 0%, #f0f9ff 100%);
+}
+
+.metric-card:nth-child(2) .ant-card-body {
+  background: linear-gradient(135deg, #f6ffed 0%, #fcffe6 100%);
+}
+
+.metric-card:nth-child(3) .ant-card-body {
+  background: linear-gradient(135deg, #fffbe6 0%, #feffe6 100%);
+}
+
+.metric-card:nth-child(4) .ant-card-body {
+  background: linear-gradient(135deg, #f9f0ff 0%, #efdbff 100%);
+}
+
+.metric-card:nth-child(5) .ant-card-body {
+  background: linear-gradient(135deg, #fff0f6 0%, #ffd6e7 100%);
+}
+
+/* Status Indicators */
+.status-indicator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.status-indicator.active {
+  background-color: #52c41a;
+  animation: pulse 2s infinite;
+}
+
+.status-indicator.completed {
+  background-color: #1890ff;
+}
+
+.status-indicator.cancelled {
+  background-color: #ff4d4f;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .dashboard-container {
+    background: white;
+    padding: 0;
+  }
+  
+  .dashboard-filters {
+    display: none;
+  }
+  
+  .metric-card,
+  .chart-card,
+  .table-card,
+  .info-card {
+    box-shadow: none;
+    border: 1px solid #d9d9d9;
+    break-inside: avoid;
+    margin-bottom: 20px;
+  }
+  
+  .ant-card-head {
+    background: #f5f5f5 !important;
+    color: #000000 !important;
+  }
+  
+  .recharts-responsive-container {
+    height: 250px !important;
+  }
+}
+
+/* Accessibility Improvements */
+.dashboard-container [role="button"]:focus,
+.dashboard-container button:focus,
+.dashboard-container .ant-select-selector:focus,
+.dashboard-container .ant-picker:focus {
+  outline: 2px solid #1890ff;
+  outline-offset: 2px;
+}
+
+.dashboard-container .ant-table-row[aria-selected="true"] {
+  background-color: #e6f7ff;
+}
+
+/* Performance Optimizations */
+.chart-card .recharts-surface {
+  will-change: transform;
+}
+
+.metric-card .ant-statistic-content {
+  will-change: contents;
+}
+
+/* Additional Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.margin-bottom-16 {
+  margin-bottom: 16px;
+}
+
+.margin-top-16 {
+  margin-top: 16px;
+}
+
+.padding-16 {
+  padding: 16px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

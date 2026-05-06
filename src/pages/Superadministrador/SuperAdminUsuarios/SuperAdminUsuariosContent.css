@@ -1,0 +1,568 @@
+/* AdminUsuariosContent.css */
+
+.admin-usuarios-container {
+  padding: 24px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+}
+
+.usuarios-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+/* Header Section */
+.header-section {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.page-title {
+  margin-bottom: 8px !important;
+  background: #17211F;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.title-icon {
+  font-size: 32px;
+  color: #17211F;
+}
+
+.page-subtitle {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Actions Section */
+.actions-section {
+  margin-bottom: 24px;
+}
+
+.search-input {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.search-input:hover,
+.search-input:focus {
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.2);
+  border-color: #667eea;
+}
+
+.refresh-btn {
+  border-radius: 8px;
+  border: 1px solid #d9d9d9;
+  transition: all 0.3s ease;
+}
+
+.refresh-btn:hover {
+  border-color: #667eea;
+  color: #667eea;
+  transform: translateY(-1px);
+}
+
+.add-user-col {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.add-user-btn {
+  background: #17211F;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.add-user-btn:hover {
+  background: #2b403c !important;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Table Section */
+.table-section {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.usuarios-table .ant-table-thead > tr > th {
+  background: #17211F;
+  color: white;
+  font-weight: 600;
+  border: none;
+  text-align: center;
+}
+
+.usuarios-table .ant-table-tbody > tr {
+  transition: all 0.3s ease;
+}
+
+.usuarios-table .ant-table-tbody > tr:hover {
+  background: rgba(102, 126, 234, 0.05);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.usuarios-table .ant-table-tbody > tr > td {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 16px 12px;
+  vertical-align: middle;
+}
+
+/* User Info Styles */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.user-name {
+  display: block;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 4px;
+  color: #262626;
+}
+
+.user-email {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.email-icon {
+  color: #667eea;
+  font-size: 12px;
+}
+
+/* Phone and Date Info */
+.phone-info,
+.date-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.phone-icon,
+.date-icon {
+  color: #667eea;
+  font-size: 14px;
+}
+
+/* Action Buttons */
+.edit-btn {
+  background: linear-gradient(135deg, #52c41a 0%, #389e0d 100%);
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(82, 196, 26, 0.3);
+  transition: all 0.3s ease;
+}
+
+.edit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(82, 196, 26, 0.4);
+}
+
+.delete-btn {
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(255, 77, 79, 0.3);
+  transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 77, 79, 0.4);
+}
+
+/* Modal Styles */
+.usuario-modal .ant-modal-header {
+  background: #17211F;
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+}
+
+.usuario-modal .ant-modal-title {
+  color: white;
+  font-weight: 600;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.modal-icon {
+  font-size: 20px;
+}
+
+.usuario-modal .ant-modal-body {
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.usuario-form .ant-form-item-label > label {
+  font-weight: 600;
+  color: #262626;
+}
+
+.usuario-form .ant-input,
+.usuario-form .ant-select-selector,
+.usuario-form .ant-input-password {
+  border-radius: 8px;
+  border: 1px solid #d9d9d9;
+  transition: all 0.3s ease;
+}
+
+.usuario-form .ant-input:hover,
+.usuario-form .ant-select-selector:hover,
+.usuario-form .ant-input-password:hover {
+  border-color: #667eea;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
+}
+
+.usuario-form .ant-input:focus,
+.usuario-form .ant-select-focused .ant-select-selector,
+.usuario-form .ant-input-password:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+}
+
+.status-switch.ant-switch-checked {
+  background: linear-gradient(135deg, #52c41a 0%, #389e0d 100%);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.cancel-btn {
+  border-radius: 8px;
+  border: 1px solid #d9d9d9;
+  transition: all 0.3s ease;
+}
+
+.cancel-btn:hover {
+  border-color: #667eea;
+  color: #667eea;
+  transform: translateY(-1px);
+}
+
+.submit-btn {
+  background: #17211F;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.submit-btn:hover {
+    background: #344a45 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admin-usuarios-container {
+    padding: 16px;
+  }
+  
+  .usuarios-card {
+    border-radius: 12px;
+  }
+  
+  .page-title {
+    font-size: 24px;
+  }
+  
+  .title-icon {
+    font-size: 24px;
+  }
+  
+  .add-user-col {
+    justify-content: center;
+  }
+  
+  .add-user-btn {
+    width: 100%;
+  }
+  
+  .user-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .user-details {
+    text-align: left;
+  }
+  
+  .usuario-modal .ant-modal-body {
+    padding: 24px 16px;
+  }
+  
+  .modal-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .cancel-btn,
+  .submit-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .admin-usuarios-container {
+    padding: 12px;
+  }
+  
+  .page-title {
+    font-size: 20px;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .title-icon {
+    font-size: 20px;
+  }
+  
+  .usuarios-table .ant-table-tbody > tr > td {
+    padding: 12px 8px;
+  }
+  
+  .user-info {
+    gap: 6px;
+  }
+  
+  .user-avatar {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .user-name {
+    font-size: 13px;
+  }
+  
+  .user-email {
+    font-size: 11px;
+  }
+}
+
+/* Animation Effects */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.usuarios-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.usuarios-table .ant-table-tbody > tr {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+/* Pagination Styles */
+.usuarios-table .ant-pagination {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.usuarios-table .ant-pagination-item {
+  border-radius: 6px;
+  border: 1px solid #d9d9d9;
+  transition: all 0.3s ease;
+}
+
+.usuarios-table .ant-pagination-item:hover {
+  border-color: #667eea;
+  transform: translateY(-1px);
+}
+
+.usuarios-table .ant-pagination-item-active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: #667eea;
+}
+
+.usuarios-table .ant-pagination-item-active a {
+  color: white;
+}
+
+/* Loading States */
+.usuarios-table .ant-spin-container {
+  min-height: 200px;
+}
+
+.usuarios-table .ant-table-placeholder {
+  background: rgba(102, 126, 234, 0.05);
+  border-radius: 8px;
+  margin: 16px;
+}
+
+/* Tag Styles */
+.usuarios-table .ant-tag {
+  border-radius: 12px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Scrollbar Styles */
+.usuarios-table .ant-table-body::-webkit-scrollbar {
+  height: 8px;
+}
+
+.usuarios-table .ant-table-body::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.usuarios-table .ant-table-body::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 4px;
+}
+
+.usuarios-table .ant-table-body::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+}
+
+/* Tooltip Styles */
+.ant-tooltip-inner {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+/* Form Validation */
+.usuario-form .ant-form-item-has-error .ant-input,
+.usuario-form .ant-form-item-has-error .ant-select-selector,
+.usuario-form .ant-form-item-has-error .ant-input-password {
+  border-color: #ff4d4f;
+  box-shadow: 0 0 0 2px rgba(255, 77, 79, 0.2);
+}
+
+/* Success States */
+.usuario-form .ant-form-item-has-success .ant-input,
+.usuario-form .ant-form-item-has-success .ant-select-selector {
+  border-color: #52c41a;
+  box-shadow: 0 0 0 2px rgba(82, 196, 26, 0.2);
+}
+
+/* Modal Overlay */
+.usuario-modal .ant-modal-mask {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 1200px) {
+  .usuarios-table .ant-table-tbody > tr > td {
+    padding: 12px 8px;
+  }
+  
+  .user-info {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 992px) {
+  .actions-section .ant-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .add-user-col {
+    justify-content: stretch;
+  }
+  
+  .add-user-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .usuarios-table .ant-table-tbody > tr > td {
+    padding: 8px 4px;
+    font-size: 12px;
+  }
+  
+  .user-name {
+    font-size: 12px;
+  }
+  
+  .user-email {
+    font-size: 10px;
+  }
+  
+  .phone-info,
+  .date-info {
+    font-size: 11px;
+  }
+  
+  .edit-btn,
+  .delete-btn {
+    min-width: 32px;
+    height: 32px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .admin-usuarios-container {
+    background: white;
+    padding: 0;
+  }
+  
+  .usuarios-card {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+  
+  .actions-section {
+    display: none;
+  }
+  
+  .usuarios-table .ant-table-tbody > tr > td:last-child {
+    display: none;
+  }
+  
+  .usuarios-table .ant-table-thead > tr > th:last-child {
+    display: none;
+  }
+}

@@ -1,0 +1,334 @@
+.documents-content {
+  padding: 24px;
+  background: #f5f5f5;
+  min-height: 100vh;
+}
+
+/* Encabezado */
+.documents-header {
+  margin-bottom: 24px;
+  padding: 16px 0;
+}
+
+.documents-header .ant-typography {
+  margin: 0;
+  color: #1890ff;
+}
+
+/* Filtros */
+.filters-card {
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.filters-card .ant-card-body {
+  padding: 16px;
+}
+
+/* Tabla principal */
+.documents-table {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.documents-table .ant-table-thead > tr > th {
+  background: #fafafa;
+  font-weight: 600;
+  border-bottom: 2px solid #e8e8e8;
+}
+
+.documents-table .ant-table-tbody > tr:hover > td {
+  background: #f0f9ff;
+}
+
+/* Tags de estatus */
+.ant-tag {
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 2px 8px;
+}
+
+/* Botones de acción */
+.documents-table .ant-btn {
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.documents-table .ant-btn-sm {
+  height: 28px;
+  min-width: 28px;
+}
+
+/* Modal de visor PDF */
+.pdf-viewer-container {
+  text-align: center;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.pdf-controls {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 12px;
+  background: #fafafa;
+  border-radius: 6px;
+}
+
+.pdf-controls span {
+  font-weight: 500;
+  color: #666;
+}
+
+/* Contenedor de firma */
+.signature-container {
+  margin-top: 24px;
+}
+
+.signature-canvas-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 16px 0;
+  border: 2px dashed #d9d9d9;
+  border-radius: 8px;
+  padding: 16px;
+  background: #fafafa;
+}
+
+.signature-canvas {
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  background: white;
+  cursor: crosshair;
+}
+
+/* Modales */
+.ant-modal-header {
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.ant-modal-title {
+  font-weight: 600;
+  color: #1890ff;
+}
+
+.ant-modal-body {
+  padding: 24px;
+}
+
+/* Upload */
+.ant-upload-drag {
+  border: 2px dashed #1890ff !important;
+  border-radius: 8px !important;
+  background: #f0f9ff !important;
+}
+
+.ant-upload-drag:hover {
+  border-color: #40a9ff !important;
+  background: #e6f7ff !important;
+}
+
+.ant-upload-drag-icon {
+  color: #1890ff !important;
+  font-size: 24px !important;
+}
+
+.ant-upload-text {
+  color: #666 !important;
+  font-size: 14px !important;
+}
+
+/* Progress */
+.ant-progress-line {
+  width: 80px;
+}
+
+.ant-progress-text {
+  font-size: 12px !important;
+  font-weight: 500;
+}
+
+/* Tooltips */
+.ant-tooltip-inner {
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+/* Form items */
+.ant-form-item-label > label {
+  font-weight: 500;
+  color: #333;
+}
+
+.ant-form-item-required::before {
+  color: #ff4d4f !important;
+}
+
+/* Select */
+.ant-select-selector {
+  border-radius: 6px !important;
+}
+
+.ant-select-multiple .ant-select-selection-item {
+  background: #e6f7ff;
+  border: 1px solid #91d5ff;
+  border-radius: 4px;
+}
+
+/* TextArea */
+.ant-input {
+  border-radius: 6px;
+}
+
+.ant-input:focus,
+.ant-input-focused {
+  border-color: #40a9ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .documents-content {
+    padding: 16px;
+  }
+  
+  .documents-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .documents-header .ant-space {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .filters-card .ant-row {
+    gap: 12px 0;
+  }
+  
+  .documents-table .ant-table-tbody > tr > td {
+    padding: 8px 4px;
+    font-size: 12px;
+  }
+  
+  .documents-table .ant-btn-sm {
+    height: 24px;
+    min-width: 24px;
+    font-size: 12px;
+  }
+  
+  .pdf-viewer-container {
+    max-height: 60vh;
+  }
+  
+  .signature-canvas-wrapper {
+    padding: 8px;
+  }
+  
+  .signature-canvas {
+    width: 100% !important;
+    height: 150px !important;
+  }
+  
+  .ant-modal {
+    margin: 16px !important;
+    max-width: calc(100vw - 32px) !important;
+  }
+  
+  .ant-modal-body {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .documents-content {
+    padding: 12px;
+  }
+  
+  .documents-header .ant-typography h3 {
+    font-size: 18px;
+  }
+  
+  .ant-btn {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+  
+  .pdf-controls {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .pdf-controls .ant-btn {
+    width: 100px;
+  }
+}
+
+/* Animaciones */
+.documents-table .ant-table-tbody > tr {
+  transition: background-color 0.3s ease;
+}
+
+.ant-btn {
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.ant-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.ant-tag {
+  transition: all 0.3s ease;
+}
+
+.signature-canvas-wrapper {
+  transition: border-color 0.3s ease;
+}
+
+.signature-canvas-wrapper:hover {
+  border-color: #1890ff;
+}
+
+/* Estados específicos */
+.ant-btn-primary {
+  background: linear-gradient(135deg, #1890ff 0%, #096dd9 100%);
+  border: none;
+  box-shadow: 0 2px 4px rgba(24, 144, 255, 0.3);
+}
+
+.ant-btn-primary:hover {
+  background: linear-gradient(135deg, #40a9ff 0%, #1890ff 100%);
+  box-shadow: 0 4px 12px rgba(24, 144, 255, 0.4);
+}
+
+.ant-btn-danger {
+  background: linear-gradient(135deg, #ff4d4f 0%, #cf1322 100%);
+  border: none;
+  box-shadow: 0 2px 4px rgba(255, 77, 79, 0.3);
+}
+
+.ant-btn-danger:hover {
+  background: linear-gradient(135deg, #ff7875 0%, #ff4d4f 100%);
+  box-shadow: 0 4px 12px rgba(255, 77, 79, 0.4);
+}
+
+/* .pdf-viewer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+} */
+
+.signature-canvas {
+  border: 2px solid #1890ff;
+  border-radius: 8px;
+  background: #fff;
+}
