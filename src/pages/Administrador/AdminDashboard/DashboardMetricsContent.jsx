@@ -38,8 +38,6 @@ const DashboardMetricsContent = () => {
   const [projectsStatus, setProjectsStatus] = useState([]);
   const [projectsRisk, setProjectsRisk] = useState([]);
   const [projectsByPortfolio, setProjectsByPortfolio] = useState([]);
-  const [tasksStatus, setTasksStatus] = useState([]);
-  const [tasksPriority, setTasksPriority] = useState([]);
   const [projectsWithPendingTasks, setProjectsWithPendingTasks] = useState([]);
   const [pendingDocuments, setPendingDocuments] = useState({ total: 0, documents: [] });
   const [scheduledMeetings, setScheduledMeetings] = useState({ today: 0, week: 0, meetings: [] });
@@ -89,19 +87,15 @@ const DashboardMetricsContent = () => {
   };
 
   const reloadFilteredCharts = async () => {
+    setLoadingCharts(true);
     try {
       const projectId = selectedProject !== 'all' ? selectedProject : null;
-      const [tasksStatusRes, docsStatsRes] = await Promise.all([
-        dashboardService.getTasksStatusDistribution(projectId),
-        dashboardService.getDocumentsSignedStats(projectId)
-      ]);
-      const taskStatusColors = { Pendiente: '#faad14', 'En Proceso': '#1890ff', Completada: '#52c41a' };
-      setTasksStatus((tasksStatusRes.data || []).map(t => ({
-        name: t.estatus, value: t.cantidad, color: taskStatusColors[t.estatus] || '#8884d8'
-      })));
+      const docsStatsRes = await dashboardService.getDocumentsSignedStats(projectId);
       setDocumentsSignedStats(docsStatsRes.data || null);
-    } catch (_) {
-      // silently fail
+    } catch (error) {
+      message.error(error.message || 'Error al filtrar por proyecto');
+    } finally {
+      setLoadingCharts(false);
     }
   };
 
@@ -128,15 +122,11 @@ const DashboardMetricsContent = () => {
         statusRes,
         riskRes,
         portfolioRes,
-        tasksStatusRes,
-        tasksPriorityRes,
         docsStatsRes
       ] = await Promise.all([
         dashboardService.getProjectsStatusDistribution(),
         dashboardService.getProjectsRiskDistribution(),
         dashboardService.getProjectsByPortfolio(),
-        dashboardService.getTasksStatusDistribution(selectedProject !== 'all' ? selectedProject : null),
-        dashboardService.getTasksPriorityDistribution(),
         dashboardService.getDocumentsSignedStats(selectedProject !== 'all' ? selectedProject : null)
       ]);
       setDocumentsSignedStats(docsStatsRes.data || null);
@@ -170,30 +160,6 @@ const DashboardMetricsContent = () => {
       setProjectsByPortfolio((portfolioRes.data || []).map(p => ({
         portfolio: p.portafolio,
         projects: p.cantidad_proyectos
-      })));
-
-      // Tareas por estado (pastel)
-      const taskStatusColors = {
-        Pendiente: '#faad14',
-        'En Proceso': '#1890ff',
-        Completada: '#52c41a'
-      };
-      setTasksStatus((tasksStatusRes.data || []).map(t => ({
-        name: t.estatus,
-        value: t.cantidad,
-        color: taskStatusColors[t.estatus] || '#8884d8'
-      })));
-
-      // Prioridad de tareas (PieChart)
-      const priorityColors = {
-        Baja: '#52c41a',
-        Media: '#faad14',
-        Alta: '#ff4d4f'
-      };
-      setTasksPriority((tasksPriorityRes.data || []).map(p => ({
-        name: p.nivel_prioridad,
-        value: p.cantidad,
-        color: priorityColors[p.nivel_prioridad] || '#8884d8'
       })));
 
       setLoadingCharts(false);
@@ -562,62 +528,6 @@ const DashboardMetricsContent = () => {
                   <Tooltip />
                   <Bar dataKey="projects" fill="#52c41a" />
                 </BarChart>
-              </ResponsiveContainer>
-            </Spin>
-          </Card>
-        </Col>
-
-        {/* Tareas por Estado */}
-        <Col xs={24} lg={12}>
-          <Card title="Distribución de Tareas por Estado" className="chart-card">
-            <Spin spinning={loadingCharts}>
-              <ResponsiveContainer width="100%" height={300}>
-                <PieChart>
-                  <Pie
-                    data={tasksStatus}
-                    cx="50%"
-                    cy="50%"
-                    labelLine={false}
-                    label={renderCustomizedLabel}
-                    outerRadius={100}
-                    fill="#8884d8"
-                    dataKey="value"
-                  >
-                    {tasksStatus.map((entry, index) => (
-                      <Cell key={`cell-task-${index}`} fill={entry.color} />
-                    ))}
-                  </Pie>
-                  <Tooltip />
-                  <Legend />
-                </PieChart>
-              </ResponsiveContainer>
-            </Spin>
-          </Card>
-        </Col>
-
-        {/* Prioridad de Tareas - PieChart */}
-        <Col xs={24} lg={12}>
-          <Card title="Distribución de Prioridad de Tareas" className="chart-card">
-            <Spin spinning={loadingCharts}>
-              <ResponsiveContainer width="100%" height={300}>
-                <PieChart>
-                  <Pie
-                    data={tasksPriority}
-                    cx="50%"
-                    cy="50%"
-                    labelLine={false}
-                    label={renderCustomizedLabel}
-                    outerRadius={100}
-                    fill="#faad14"
-                    dataKey="value"
-                  >
-                    {tasksPriority.map((entry, index) => (
-                      <Cell key={`cell-priority-${index}`} fill={entry.color} />
-                    ))}
-                  </Pie>
-                  <Tooltip />
-                  <Legend />
-                </PieChart>
               </ResponsiveContainer>
             </Spin>
           </Card>
