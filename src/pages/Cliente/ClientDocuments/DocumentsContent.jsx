@@ -63,7 +63,7 @@ const DocumentsContent = ({ userRole: _userRole, userId: _userId, projectUsers: 
   const [pageNumber, setPageNumber] = useState(1);
   const [signatureRef, setSignatureRef] = useState(null);
   const [showSignature, setShowSignature] = useState(false);
-  const [signaturePosition, setSignaturePosition] = useState({ x: 100, y: 100 });
+  const [signaturePosition, setSignaturePosition] = useState({ x: 100, y: 100, xRatio: 0.15, yRatio: 0.85 });
   const [pdfLoadError, setPdfLoadError] = useState(null);
 
   // Para manejar click en PDF
@@ -168,7 +168,7 @@ const DocumentsContent = ({ userRole: _userRole, userId: _userId, projectUsers: 
     setPdfFile(null);
     setPdfLoadError(null);
     setShowSignature(false);
-    setSignaturePosition({ x: 100, y: 100 });
+    setSignaturePosition({ x: 100, y: 100, xRatio: 0.15, yRatio: 0.85 });
     uploadForm.resetFields();
     rejectForm.resetFields();
     setPdfPageRendered(false);
