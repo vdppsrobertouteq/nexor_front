@@ -631,15 +631,15 @@ const DashboardMetricsContent = () => {
             extra={<Tag color="blue">{selectedProject !== 'all' ? 'Proyecto filtrado' : 'Todos los proyectos'}</Tag>}
           >
             <Spin spinning={loadingCharts}>
-              {documentsSignedStats ? (
+              {documentsSignedStats && documentsSignedStats.total > 0 ? (
                 <ResponsiveContainer width="100%" height={300}>
                   <PieChart>
                     <Pie
                       data={[
-                        { name: 'Firmados', value: documentsSignedStats.firmados || 0, color: '#52c41a' },
-                        { name: 'Pendientes', value: documentsSignedStats.pendientes || 0, color: '#faad14' },
-                        { name: 'Rechazados', value: documentsSignedStats.rechazados || 0, color: '#ff4d4f' }
-                      ]}
+                        { name: 'Firmados',   value: Number(documentsSignedStats.firmados)   || 0, color: '#52c41a' },
+                        { name: 'Pendientes', value: Number(documentsSignedStats.pendientes) || 0, color: '#faad14' },
+                        { name: 'Rechazados', value: Number(documentsSignedStats.rechazados) || 0, color: '#ff4d4f' }
+                      ].filter(d => d.value > 0)}
                       cx="50%"
                       cy="50%"
                       labelLine={false}
@@ -651,11 +651,15 @@ const DashboardMetricsContent = () => {
                         { color: '#52c41a' },
                         { color: '#faad14' },
                         { color: '#ff4d4f' }
-                      ].map((entry, index) => (
+                      ].filter((_, i) => [
+                        Number(documentsSignedStats.firmados)   || 0,
+                        Number(documentsSignedStats.pendientes) || 0,
+                        Number(documentsSignedStats.rechazados) || 0
+                      ][i] > 0).map((entry, index) => (
                         <Cell key={`cell-docs-${index}`} fill={entry.color} />
                       ))}
                     </Pie>
-                    <Tooltip />
+                    <Tooltip formatter={(value, name) => [value, name]} />
                     <Legend />
                   </PieChart>
                 </ResponsiveContainer>
