@@ -134,8 +134,7 @@ const DocumentsContent = ({ userRole: _userRole, userId: _userId, projectUsers: 
       const matchesStatus = !filters.status || doc.estatus === filters.status;
       const matchesName = !filters.name ||
         doc.nombre_documento.toLowerCase().includes(filters.name.toLowerCase());
-      // Solo pendientes y rechazados
-      return matchesStatus && matchesName && doc.estatus !== 'Firmado';
+      return matchesStatus && matchesName;
     });
   }, [documents, filters]);
 
@@ -532,6 +531,7 @@ const DocumentsContent = ({ userRole: _userRole, userId: _userId, projectUsers: 
             >
               <Option value="Pendiente">Pendiente</Option>
               <Option value="Rechazado">Rechazado</Option>
+              <Option value="Firmado">Firmado</Option>
             </Select>
           </Col>
           <Col xs={24} sm={12} md={8}>
@@ -813,7 +813,7 @@ const DocumentsContent = ({ userRole: _userRole, userId: _userId, projectUsers: 
           ]}
           dataSource={signedDocuments}
           rowKey="id"
-          pagination={{ pageSize: 5 }}
+          pagination={{ pageSize: 10, showSizeChanger: true, showTotal: (t) => `Total ${t} documentos firmados` }}
         />
       </Modal>
 
