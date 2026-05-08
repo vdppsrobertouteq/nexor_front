@@ -18,6 +18,7 @@ const ModalEmailVerification = ({
   visible = true,
   email = '',
   formData = null,
+  debugCode = null,
   onComplete = () => { },
   onClose = () => { },
   colorTheme = {
@@ -122,8 +123,16 @@ const ModalEmailVerification = ({
             <p>
               Escribe el código de 6 dígitos que enviamos a&nbsp;
               <strong>{email}</strong>
-            </p>
-          </div>
+            </p>            {debugCode && (
+              <div style={{
+                background: '#fff7e6', border: '1px solid #ffa940',
+                borderRadius: 6, padding: '8px 14px', marginTop: 10,
+                fontSize: 14, color: '#874d00'
+              }}>
+                ⚠️ El email no pudo enviarse. Tu código es:&nbsp;
+                <strong style={{ fontSize: 20, letterSpacing: 4 }}>{debugCode}</strong>
+              </div>
+            )}          </div>
 
           <div className="step-form">
             <div className="form-item">

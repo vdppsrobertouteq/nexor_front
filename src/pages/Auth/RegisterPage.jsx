@@ -28,6 +28,7 @@ const RegisterPage = () => {
   const [userEmail, setUserEmail] = useState('');
 
   const [formData, setFormData] = useState(null);
+  const [debugCode, setDebugCode] = useState(null);
   const [passwordValue, setPasswordValue] = useState('');
 
   // Calcula fortaleza de contraseña (0-4)
@@ -76,9 +77,14 @@ const RegisterPage = () => {
       if (result.success) {
         setShowEmailVerificationModal(true);
         setUserEmail(values.email);
-        // Guardar datos del formulario para usar después
         setFormData(values);
-        Messages.success('Código enviado', 'Revisa tu correo electrónico');
+        if (result.data?.codigo_debug) {
+          setDebugCode(result.data.codigo_debug);
+          Messages.warning('Email no disponible', `Tu código de verificación es: ${result.data.codigo_debug}`);
+        } else {
+          setDebugCode(null);
+          Messages.success('Código enviado', 'Revisa tu correo electrónico');
+        }
       } else {
         Messages.error('Error', result.message || 'Error al enviar código');
       }
@@ -408,6 +414,7 @@ const RegisterPage = () => {
           visible={showEmailVerificationModal}
           email={userEmail}
           formData={formData}
+          debugCode={debugCode}
           onComplete={handleEmailVerificationComplete}
           onClose={() => setShowEmailVerificationModal(false)}
         />
